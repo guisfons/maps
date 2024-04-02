@@ -21,3 +21,66 @@
         display: none !important;
     }
 }
+
+.loader {
+    background-color: #86c9ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    
+    opacity: 1;
+    visibility: visible;
+
+    &--hide {
+        animation-name: loader;
+        animation-duration: 4s;
+    }
+}
+
+@keyframes loader {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    99% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@keyframes card {
+    0% {
+        rotate: -2deg;
+    }
+    50% {
+        rotate: 1deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+}
+
+@keyframes cardswap {
+    from {
+        rotate: -2deg;
+        transform: translate(0%, 0%);
+    }
+    to {
+        rotate: -15deg;
+        transform: translate(-130%, -130%);
+    }
+}
