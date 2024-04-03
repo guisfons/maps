@@ -48,7 +48,7 @@ function mapNavigation () {
         } else {
             activeMap.removeClass('maps__item--active')
             selectedMap.remove()
-            $('.maps__selection').prepend(selectedMap.addClass('maps__item--active'))
+            $('.maps__selection').prepend(selectedMap.addClass('maps__item--swap-reverse maps__item--active'))
         }
     })
 }
