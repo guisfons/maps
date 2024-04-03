@@ -40,7 +40,7 @@ function mapNavigation () {
         if(selectedMap.prev().hasClass('maps__item--active')) {
             selectedMap.addClass('maps__item--active')
             activeMap.addClass('maps__item--swap')
-            $('.maps__item--swap').fadeOut('slow', function() {
+            $('.maps__item--swap').fadeOut('fast', function() {
                 activeMap.removeClass('maps__item--active').removeClass('maps__item--swap').remove()
                 $('.maps__selection').append(activeMap.removeClass('maps__item--active'))
                 $(this).css('display', '')

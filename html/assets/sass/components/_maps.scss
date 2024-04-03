@@ -5,9 +5,9 @@
         position: relative;
         display: flex;
         align-items: center;
-        max-height: 50vh;
+        max-height: 65vh;
         aspect-ratio: 958/605;
-        margin: 8rem 0 0 10%;
+        margin: 8rem 0 5vh 10%;
     }
 
     &__item {
@@ -79,11 +79,15 @@
             z-index: 4;
             left: 0%;
             height: 100%;
+            
+            opacity: 1;
+            visibility: visible;
         }
 
         &--swap {
-            animation-name: cardswap !important;
-            animation-duration: 1s !important;
+            // animation-name: cardswap !important;
+            animation-name: cardfadeout !important;
+            animation-duration: .3s !important;
         }
 
         &-caption {
@@ -118,8 +122,6 @@
     &__nav {
         display: flex;
         justify-content: space-between;
-
-        margin-top: 9.5rem;
 
         &-prev, &-next {
             display: flex;

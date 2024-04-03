@@ -84,3 +84,17 @@
         transform: translate(-130%, -130%);
     }
 }
+
+@keyframes cardfadeout {
+    from {
+        opacity: 1;
+        visibility: visible;
+        left: 0%;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+        left: -10%;
+    }
+}
