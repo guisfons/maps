@@ -10,8 +10,14 @@ $( document ).ready(function () {
         $(this).attr('draggable', false)
     })
 
-    map()
+    menu(), map()
 })
+
+function menu () {
+    $('.header__menu').on('click', function() {
+        $(this).toggleClass('header__menu--active')
+    })
+}
 
 function map () {
     mapCount()
@@ -41,6 +47,7 @@ function mapNavigation () {
             $('.maps__selection').find('.maps__item--swap-reverse').removeClass('maps__item--swap-reverse')
             selectedMap.addClass('maps__item--active')
             activeMap.addClass('maps__item--swap')
+
             $('.maps__item--swap').fadeOut('fast', function() {
                 activeMap.removeClass('maps__item--active').removeClass('maps__item--swap').remove()
                 $('.maps__selection').append(activeMap.removeClass('maps__item--active'))

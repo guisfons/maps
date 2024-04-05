@@ -1,23 +1,36 @@
 .maps {
     width: 100%;
+    margin: 0 auto;
 
     &__selection {
         position: relative;
         display: flex;
         align-items: center;
-        max-height: 60vh;
+        max-height: 55vh;
         aspect-ratio: 958/605;
-        margin: 8rem 0 5vh 10%;
+        margin: 8rem 0 8rem 10%;
+
+        @include max (900) {
+            aspect-ratio: 60/90;
+            margin: 5vh auto 20vh;
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 
     &__item {
         position: absolute;
         width: 100%;
         height: 100%;
-        aspect-ratio: 958/605;
+
         border-radius: 2.5rem;
         overflow: hidden;
         transition: .3s ease-in-out;
+
+        @include max (900) {
+            left: initial !important;
+            height: 100% !important;
+        }
 
         &:not(:hover) {
             animation-name: card;
@@ -26,21 +39,6 @@
 
         &:hover {
             rotate: -2deg;
-        }
-
-        figure {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
         }
 
         &:nth-of-type(n+5) {
@@ -61,33 +59,76 @@
             z-index: 3;
             left: 20%;
             height: 90%;
+
+            @include max (900) {
+                top: 5%;
+                width: 90%;
+            }
         }
 
         &:nth-of-type(3) {
             z-index: 2;
             left: 40%;
             height: 80%;
+
+            @include max (900) {
+                top: 10%;
+                width: 80%;
+            }
         }
 
         &:nth-of-type(4) {
             z-index: 1;
             left: 60%;
             height: 70%;
+
+            @include max (900) {
+                top: 15%;
+                width: 70%;
+            }
         }
 
         &--active {
             z-index: 4;
             left: 0%;
             height: 100%;
+
+            @include max (900) {
+                left: initial;
+                right: 0%;
+            }
         }
 
         &--swap {
             animation-name: cardfadeout !important;
             animation-duration: .3s !important;
 
+            @include max (900) {
+                animation-duration: 1s !important;
+            }
+
             &-reverse {
                 animation-name: cardfadein !important;
                 animation-duration: .3s !important;
+
+                @include max (900) {
+                    animation-duration: 1s !important;
+                }
+            }
+        }
+
+        figure {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
 
@@ -127,26 +168,33 @@
         &-prev, &-next {
             display: flex;
             align-items: center;
+            position: relative;
+            z-index: 4;
 
             & > span {
                 display: flex;
                 align-items: center;
 
-                clip-path: polygon(100% 0, 100% 66%, 90% 100%, 0 100%, 0 0);
                 background-color: #252525;
                 padding: .4rem;
-                margin-left: -3rem;
+
+                @include max (900) {
+                    padding: .1rem;
+                }
 
                 span {
                     background-color: #fff;
-                    padding: 1.4rem 4.5rem 1.4rem 6rem;
-                    clip-path: polygon(100% 0, 100% 66%, 91% 100%, 0 100%, 0 0);
 
                     font-weight: 500;
                     font-family: "Bebas Neue";
                     font-size: 2.7rem;
                     line-height: 2rem;
                     color: #262626;
+
+                    @include max (900) {
+                        font-size: 1.7rem;
+                        line-height: 1rem;
+                    }
                 }
             }
 
@@ -164,15 +212,58 @@
                 border: .4rem solid #252525;
                 border-radius: 50%;
 
+                @include max (900) {
+                    width: 4rem;
+                    height: 4rem;
+
+                    border-width: .1rem;
+                }
+
                 img {
                     max-width: 3rem;
                     width: 100%;
                     height: auto;
+
+                    @include max (900) {
+                        max-width: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        &-prev {
+            & > span {
+                clip-path: polygon(100% 0, 100% 66%, 90% 100%, 0 100%, 0 0);
+                margin-left: -3rem;
+
+                span {
+                    padding: 1.4rem 4.5rem 1.4rem 6rem;
+                    clip-path: polygon(100% 0, 100% 66%, 91% 100%, 0 100%, 0 0);
+
+                    @include max (900) {
+                        padding: .7rem 2.5rem .7rem 4rem !important;
+                    }
                 }
             }
         }
 
         &-next {
+            flex-direction: row-reverse;
+            
+            & > span {
+                clip-path: polygon(0 0, 0 66%, 10% 100%, 100% 100%, 100% 0);
+                margin-right: -3rem;
+
+                span {
+                    padding: 1.4rem 4.5rem 1.4rem 6rem;
+                    clip-path: polygon(0 0, 0 66%, 10% 100%, 100% 100%, 100% 0);
+
+                    @include max (900) {
+                        padding: .7rem 4rem .7rem 2.5rem !important;
+                    }
+                }
+            }
+
             figure {
                 rotate: 180deg;
             }
