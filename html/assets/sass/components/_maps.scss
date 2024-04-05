@@ -79,13 +79,9 @@
             z-index: 4;
             left: 0%;
             height: 100%;
-            
-            opacity: 1;
-            visibility: visible;
         }
 
         &--swap {
-            // animation-name: cardswap !important;
             animation-name: cardfadeout !important;
             animation-duration: .3s !important;
 

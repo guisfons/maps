@@ -38,6 +38,7 @@ function mapNavigation () {
         }
 
         if(selectedMap.prev().hasClass('maps__item--active')) {
+            $('.maps__selection').find('.maps__item--swap-reverse').removeClass('maps__item--swap-reverse')
             selectedMap.addClass('maps__item--active')
             activeMap.addClass('maps__item--swap')
             $('.maps__item--swap').fadeOut('fast', function() {
@@ -46,9 +47,13 @@ function mapNavigation () {
                 $(this).css('display', '')
             })
         } else {
-            activeMap.removeClass('maps__item--active')
+            $('.maps__selection').find('.maps__item--swap-reverse').removeClass('maps__item--swap-reverse')
             selectedMap.remove()
-            $('.maps__selection').prepend(selectedMap.addClass('maps__item--swap-reverse maps__item--active'))
+            selectedMap.fadeIn('fast', function() {
+                activeMap.removeClass('maps__item--active')
+                selectedMap.addClass('maps__item--swap-reverse')
+                $('.maps__selection').prepend(selectedMap.addClass('maps__item--active'))
+            })
         }
     })
 }
