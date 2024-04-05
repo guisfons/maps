@@ -12,6 +12,10 @@ html {
     @include max (900) {
         font-size: 40%;
     }
+
+    @include maxY (700) {
+        font-size: 40%;
+    }
 }
 body {
     box-sizing: border-box;

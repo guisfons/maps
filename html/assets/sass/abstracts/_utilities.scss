@@ -10,6 +10,12 @@
     }
 }
 
+@mixin maxY($screen) {
+    @media only screen and (max-height: $screen+"px") {
+        @content;
+    }
+}
+
 .mobile-only {
     @include min(801) {
         display: none !important;
