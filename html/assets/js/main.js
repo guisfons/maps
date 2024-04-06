@@ -58,8 +58,7 @@ function mapNavigation () {
             selectedMap.remove()
             selectedMap.fadeIn('fast', function() {
                 activeMap.removeClass('maps__item--active')
-                selectedMap.addClass('maps__item--swap-reverse')
-                $('.maps__selection').prepend(selectedMap.addClass('maps__item--active'))
+                $('.maps__selection').prepend(selectedMap.addClass('maps__item--active').addClass('maps__item--swap-reverse'))
             })
         }
     })
