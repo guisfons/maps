@@ -82,9 +82,9 @@ function swipe () {
     var deltaY = endY - startY
 
     if (Math.abs(deltaX) > Math.abs(deltaY) && deltaX < 0) {
-        $('.maps__nav-next').trigger('click')
-    } else {
         $('.maps__nav-prev').trigger('click')
+    } else {
+        $('.maps__nav-next').trigger('click')
     }
   })
 }
