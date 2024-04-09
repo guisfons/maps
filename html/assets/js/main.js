@@ -62,4 +62,29 @@ function mapNavigation () {
             })
         }
     })
+
+    swipe()
+}
+
+function swipe () {
+    var swipeArea = $('.maps')
+    var startX, startY
+
+  swipeArea.on('touchstart', function(event) {
+    startX = event.touches[0].clientX
+    startY = event.touches[0].clientY
+  })
+
+  swipeArea.on('touchend', function(event) {
+    var endX = event.changedTouches[0].clientX
+    var endY = event.changedTouches[0].clientY
+    var deltaX = endX - startX
+    var deltaY = endY - startY
+
+    if (Math.abs(deltaX) > Math.abs(deltaY) && deltaX < 0) {
+        $('.maps__nav-next').trigger('click')
+    } else {
+        $('.maps__nav-prev').trigger('click')
+    }
+  })
 }
