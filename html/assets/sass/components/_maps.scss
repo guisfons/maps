@@ -103,17 +103,13 @@
             animation-name: cardfadeout !important;
             animation-duration: .3s !important;
 
-            @include max (900) {
-                animation-duration: 1s !important;
-            }
+            @include max (900) { animation-name: cardfadeoutmobile !important; }
 
             &-reverse {
                 animation-name: cardfadein !important;
                 animation-duration: .3s !important;
 
-                @include max (900) {
-                    animation-duration: 1s !important;
-                }
+                @include max (900) { animation-name: cardfadeinmobile !important; }
             }
         }
 
