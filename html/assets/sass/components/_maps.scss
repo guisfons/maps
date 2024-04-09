@@ -179,7 +179,7 @@
                 padding: .4rem;
 
                 @include max (900) {
-                    padding: .1rem;
+                    padding: .15rem;
                 }
 
                 span {
@@ -190,11 +190,6 @@
                     font-size: 2.7rem;
                     line-height: 2rem;
                     color: #262626;
-
-                    @include max (900) {
-                        font-size: 1.7rem;
-                        line-height: 1rem;
-                    }
                 }
             }
 
@@ -236,6 +231,8 @@
                 clip-path: polygon(100% 0, 100% 66%, 90% 100%, 0 100%, 0 0);
                 margin-left: -3rem;
 
+                @include max (900) {clip-path: polygon(100% 0, 100% 68%, 91% 100%, 0 100%, 0 0)}
+
                 span {
                     padding: 1.4rem 4.5rem 1.4rem 6rem;
                     clip-path: polygon(100% 0, 100% 66%, 91% 100%, 0 100%, 0 0);
@@ -253,6 +250,8 @@
             & > span {
                 clip-path: polygon(0 0, 0 66%, 10% 100%, 100% 100%, 100% 0);
                 margin-right: -3rem;
+
+                @include max (900) {clip-path: polygon(0 0, 0 68%, 10% 100%, 100% 100%, 100% 0);}
 
                 span {
                     padding: 1.4rem 4.5rem 1.4rem 6rem;
